@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>2025年高専祭Webサイト コンポーネント集</title>
+		<script type="module" src="./components/popup-wrapper.js"></script>
+		<script type="module" src="./components/popup-openner.js"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				display: grid;
+				place-items: center;
+				font-family: sans-serif;
+			}
+			main {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 1rem 2rem;
+				width: 100%;
+				max-width: 500px;
+				min-height: 100svh;
+				background-color: #686c89;
+				color: white;
+				box-sizing: border-box;
+			}
+			.title {
+				text-align: center;
+			}
+			.popup-area {
+				margin-top: 2rem;
+				display: flex;
+				flex-direction: column;
+				gap: 40px;
+
+				.exhibit {
+					width: 100%;
+				}
+
+				.content-image {
+					width: 100%;
+					height: auto;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1 class="title">2025年高専祭ページ<br />コンポーネント集</h1>
+			<!-- ポップアップ・カスタムエレメントのセット -->
+			<div class="popup-area">
+				<!-- popup-opennerにネストしたコンテンツをクリックするとポップアップが開く -->
+				<!-- for属性で表示先のidを指定する -->
+				<popup-openner for="popup1">
+					<img class="exhibit" src="/images/exhibit.png" alt="展示" />
+				</popup-openner>
+				<popup-wrapper id="popup1">
+					<img
+						class="content-image"
+						src="/images/content.png"
+						alt="コンテンツ"
+					/>
+				</popup-wrapper>
+
+				<popup-openner for="popup2">
+					<img class="exhibit" src="/images/exhibit.png" alt="展示" />
+				</popup-openner>
+				<popup-wrapper id="popup2">
+					<h2>コンテンツその2</h2>
+					<p>展示の詳細情報がここに入ります。</p>
+				</popup-wrapper>
+			</div>
+		</main>
+	</body>
+</html>
