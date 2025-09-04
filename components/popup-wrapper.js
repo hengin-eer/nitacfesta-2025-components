@@ -15,7 +15,7 @@ class PopupWrapper extends HTMLElement {
           display: none;
           align-items: center;
           justify-content: center;
-          background: rgba(255,255,255,0.25);
+          background: rgba(0,0,0,0.7);
         }
         .popup-backdrop[open] { display: flex; }
         .popup-content {
@@ -51,6 +51,7 @@ class PopupWrapper extends HTMLElement {
     `;
 	}
 	connectedCallback() {
+		this._body = document.body;
 		this._backdrop = this.shadowRoot.querySelector(".popup-backdrop");
 		this.shadowRoot
 			.querySelector(".close-btn")
@@ -61,9 +62,11 @@ class PopupWrapper extends HTMLElement {
 	}
 	open() {
 		this._backdrop.setAttribute("open", "");
+		this._body.style.overflow = "hidden";
 	}
 	close() {
 		this._backdrop.removeAttribute("open");
+		this._body.style.overflow = "";
 	}
 }
 customElements.define("popup-wrapper", PopupWrapper);
