@@ -6,6 +6,8 @@
 # Components
 予定ではそこまで数は増えませんが、いくつかのコンポーネントを公開しています。
 
+コンポーネントを使い始める方は、[導入の仕方](./docs/how-to-introduce.md)をご参照ください。
+
 ## Popup
 ### Overview
 - PopupWrapper: ポップアップのラッパーコンポーネント
@@ -47,3 +49,4 @@
 ```html
 <script type="module" src="./components/popup.js"></script>
 ```
+
