@@ -1,4 +1,3 @@
-// popup-wrapper.js
 class PopupWrapper extends HTMLElement {
 	constructor() {
 		super();
