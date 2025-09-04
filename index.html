@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>2025年高専祭Webサイト コンポーネント集</title>
+		<title>Top | 2025年高専祭Webサイト コンポーネント集</title>
 		<script type="module" src="./components/popup-wrapper.js"></script>
 		<script type="module" src="./components/popup-openner.js"></script>
 		<style>
@@ -15,9 +15,6 @@
 				font-family: sans-serif;
 			}
 			main {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
 				padding: 1rem 2rem;
 				width: 100%;
 				max-width: 500px;
@@ -25,23 +22,17 @@
 				background-color: #686c89;
 				color: white;
 				box-sizing: border-box;
-			}
-			.title {
-				text-align: center;
-			}
-			.popup-area {
-				margin-top: 2rem;
-				display: flex;
-				flex-direction: column;
-				gap: 40px;
 
-				.exhibit {
-					width: 100%;
+				.title {
+					text-align: center;
 				}
 
-				.content-image {
-					width: 100%;
-					height: auto;
+				a {
+					color: white;
+				}
+
+				section {
+					margin-top: 50px;
 				}
 			}
 		</style>
@@ -49,29 +40,31 @@
 	<body>
 		<main>
 			<h1 class="title">2025年高専祭ページ<br />コンポーネント集</h1>
-			<!-- ポップアップ・カスタムエレメントのセット -->
-			<div class="popup-area">
-				<!-- popup-opennerにネストしたコンテンツをクリックするとポップアップが開く -->
-				<!-- for属性で表示先のidを指定する -->
-				<popup-openner for="popup1">
-					<img class="exhibit" src="./images/exhibit.png" alt="展示" />
-				</popup-openner>
-				<popup-wrapper id="popup1">
-					<img
-						class="content-image"
-						src="./images/content.png"
-						alt="コンテンツ"
-					/>
-				</popup-wrapper>
-
-				<popup-openner for="popup2">
-					<img class="exhibit" src="./images/exhibit.png" alt="展示" />
-				</popup-openner>
-				<popup-wrapper id="popup2">
-					<h2>コンテンツその2</h2>
-					<p>展示の詳細情報がここに入ります。</p>
-				</popup-wrapper>
-			</div>
+			<section class="component-list">
+				<h2>Components</h2>
+				<ul>
+					<li><a href="./popup.html">ポップアップ</a></li>
+				</ul>
+			</section>
+			<section class="link-list">
+				<h2>Support</h2>
+				<p>お困りの際は以下にお問い合わせください。</p>
+				<ul>
+					<li>
+						<a
+							target="_blank"
+							rel="noopener"
+							href="https://github.com/hengin-eer"
+							>GitHub</a
+						>
+					</li>
+					<li>
+						<a target="_blank" rel="noopener" href="https://x.com/timdaik"
+							>Twitter</a
+						>
+					</li>
+				</ul>
+			</section>
 		</main>
 	</body>
 </html>
